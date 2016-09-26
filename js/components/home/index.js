@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
-import {TouchableOpacity} from 'react-native';
-
 import {openDrawer, closeDrawer} from '../../actions/drawer';
 import {setIndex} from '../../actions/list';
 import {replaceRoute, replaceOrPushRoute} from '../../actions/route';
 
-import {Container, Header, Footer, FooterTab, Title, Content, Text, Button, Icon, View} from 'native-base';
-import {Grid, Row} from 'react-native-easy-grid';
-
+import {Container, Header, Footer, FooterTab, Title, Content, Button, Icon, View} from 'native-base';
+import {List, ListItem, Thumbnail, Text} from 'native-base';
 import myTheme from '../../themes/base-theme';
-import styles from './styles';
 
 class Home extends Component {
 
@@ -31,41 +26,44 @@ class Home extends Component {
         <Header>
           <Title>ДайвПринт</Title>
           <Button transparent onPress={this.props.openDrawer}>
-            <Icon name='menu'/>
+            <Icon name='ios-menu'/>
           </Button>
         </Header>
-
         <Content>
-          <Grid style={{marginTop: 20}}>
-            {this.props.list.map((item, i) =>
-              <Row key={i}>
-                <TouchableOpacity style={styles.row} onPress={() => this.navigateTo('blankPage', i)}>
-                  <Text style={styles.text}>
-                    {item}
-                  </Text>
-                </TouchableOpacity>
-              </Row>
-            )}
-
-          </Grid>
+        <List>
+          <ListItem>
+            <Thumbnail square size={80} source={require('../../../images/blackwhite.jpg')} />
+            <Text style={{color: '#000'}}> Черно-белое копирование и печать</Text>
+            <Text note>Профессионально, оперативно, качественно и копируем черно-белые документы!</Text>
+          </ListItem>
+          <ListItem>
+            <Thumbnail square size={80} source={require('../../../images/color.jpg')} />
+            <Text style={{color: '#000'}}>Цветное копирование и цветная печать</Text>
+            <Text note>У нас Вам быстро и по доступной цене сделают цветные копии документов</Text>
+          </ListItem>
+          <ListItem>
+            <Thumbnail square size={80} source={require('../../../images/pereplet.jpg')} />
+            <Text style={{color: '#000'}}>Брошюровка и переплет</Text>
+            <Text note>Твердый и мягкий переплет книг, дипломных проектов и диссертаций</Text>
+          </ListItem>
+        </List>
         </Content>
         <Footer>
           <FooterTab>
             <View active>
-              <Icon name='home' />
-              <Text>Главная</Text>
+              <Icon name='ios-home' />
             </View>
             <View>
-              <Icon name='view-comfy' />
-              <Text>Услуги</Text>
+              <Icon name='logo-instagram' />
             </View>
             <View>
-              <Icon name='monetization-on' />
-              <Text>Цены</Text>
+              <Icon name='ios-keypad' />
             </View>
             <View>
-              <Icon name='mail-outline' />
-              <Text>Контакты</Text>
+              <Icon name='ios-calculator' />
+            </View>
+            <View>
+              <Icon name='ios-call' />
             </View>
           </FooterTab>
         </Footer>

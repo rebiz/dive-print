@@ -12,12 +12,12 @@ module.exports = {
 
   fontFamily: (Platform.OS === 'ios') ? 'HelveticaNeue' : 'Roboto',
   btnFontFamily: (Platform.OS === 'ios') ? 'HelveticaNeue' : 'Roboto_medium',
-  iconFamily: 'MaterialIcons',
+  iconFamily: 'Ionicons',
 
   subtitleColor: '#8e8e93',
 
   inverseTextColor: '#000',
-  textColor: '#fff',
+  textColor: '#000',
 
   fontSizeBase: 15,
   titleFontSize: (Platform.OS === 'ios') ? 17 : 19,
@@ -60,7 +60,9 @@ module.exports = {
   },
 
   footerHeight: 55,
-  footerDefaultBg: '#084C96',
+  footerDefaultBg: '#fff',
+  footerTextColor: '#084C96',
+  tabBarTextColor: '#084C96',
   toolbarHeight: (Platform.OS === 'ios') ? 64 : 56,
   toolbarDefaultBg: '#084C96',
   toolbarInverseBg: '#222',
