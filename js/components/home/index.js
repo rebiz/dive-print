@@ -22,14 +22,6 @@ class Home extends Component {
 
   render() {
     return (
-      <Container theme={myTheme}>
-        <Header>
-          <Title>ДайвПринт</Title>
-          <Button transparent onPress={this.props.openDrawer}>
-            <Icon name='ios-menu'/>
-          </Button>
-        </Header>
-        <Content>
         <List>
           <ListItem>
             <Thumbnail square size={80} source={require('../../../images/blackwhite.jpg')} />
@@ -47,27 +39,6 @@ class Home extends Component {
             <Text note>Твердый и мягкий переплет книг, дипломных проектов и диссертаций</Text>
           </ListItem>
         </List>
-        </Content>
-        <Footer>
-          <FooterTab>
-            <View active>
-              <Icon name='ios-home' />
-            </View>
-            <View>
-              <Icon name='logo-instagram' />
-            </View>
-            <View>
-              <Icon name='ios-keypad' />
-            </View>
-            <View>
-              <Icon name='ios-calculator' />
-            </View>
-            <View>
-              <Icon name='ios-call' />
-            </View>
-          </FooterTab>
-        </Footer>
-      </Container>
     );
   }
 }

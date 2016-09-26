@@ -51,11 +51,11 @@ class SideBar extends Component {
 }
 
 function bindAction(dispatch) {
-    return {
-        closeDrawer: ()=>dispatch(closeDrawer()),
-        replaceOrPushRoute:(route)=>dispatch(replaceOrPushRoute(route)),
-        setIndex:(index)=>dispatch(setIndex(index))
-    }
+  return {
+    closeDrawer: () => dispatch(closeDrawer()),
+    replaceOrPushRoute: (route) => dispatch(replaceOrPushRoute(route)),
+    setIndex: (index) => dispatch(setIndex(index))
+  };
 }
 
 export default connect(null, bindAction)(SideBar);

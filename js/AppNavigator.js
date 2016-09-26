@@ -6,9 +6,11 @@ import { BackAndroid, Platform, StatusBar } from 'react-native';
 import { closeDrawer } from './actions/drawer';
 import { popRoute } from './actions/route';
 import Navigator from 'Navigator';
+import Layout from './Layout';
 
 import Login from './components/login/';
 import Home from './components/home/';
+import Contacts from './components/contacts/';
 import BlankPage from './components/blankPage/';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
@@ -132,15 +134,17 @@ class AppNavigator extends Component {
   renderScene(route, navigator) {
     switch (route.id) {
       case 'splashscreen':
-        return <SplashPage navigator={navigator} />;
+        return <Layout><SplashPage navigator={navigator} /></Layout>;
       case 'login':
-        return <Login navigator={navigator} />;
+        return <Layout><Login navigator={navigator} /></Layout>;
       case 'home':
-        return <Home navigator={navigator} />;
+        return <Layout><Home navigator={navigator} /></Layout>;
+      case 'contacts':
+        return <Layout><Contacts navigator={navigator} /></Layout>;
       case 'blankPage':
         return <BlankPage navigator={navigator} />;
       default :
-        return <Login navigator={navigator}  />;
+        return <Login navigator={navigator} />;
     }
   }
 }
